@@ -1,7 +1,6 @@
 import { Stormie } from '../models/stormie.js'
-import { Profile } from '../models/stormie.js'
+import { Profile } from '../models/profile.js'
 
-import { Stormie } from '../models/skill.js'
 function index(req, res) {
     Skill.find({})
     .then(stormies => {
