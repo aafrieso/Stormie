@@ -1,6 +1,9 @@
 import { Stormie } from '../models/stormie.js'
+import { Profile } from '../models/stormie.js'
+
+import { Stormie } from '../models/skill.js'
 function index(req, res) {
-    Stormie.find({})
+    Skill.find({})
     .then(stormies => {
     res.render('stormies/index', {
     stormies: stormies,
@@ -13,42 +16,42 @@ function index(req, res) {
 }
 
 function newSkill(req, res) {
-res.render('skills/new')
+res.render('stormies/new')
 }
 
 function create(req, res) {
 req.body.learned = false
-Skill.create(req.body)
-.then(skill => {
-    res.redirect('/skills')
+Stormie.create(req.body)
+.then(stormie => {
+    res.redirect('/stormies')
 })
 .catch(error => {
     console.log(error)
-    res.redirect('/skills')
+    res.redirect('/stormies')
 })
 }
 
 function show(req, res) {
 Skill.findById(req.params.id)
 .then(skill => {
-    res.render('skills/show', {
-        skill: skill
+    res.render('stormies/show', {
+        stormie: stormie
     })
 })
 .catch(error => {
     console.log(error)
-    res.redirect('/skills')
+    res.redirect('/stormies')
 })
 }
 
-function deleteSkill(req, res) {
+function deleteStormie(req, res) {
     Skill.findByIdAndDelete(req.params.id)
-    .then(skill => {
-    res.redirect('/skills')
+    .then(stormie => {
+    res.redirect('/stormies')
 })
     .catch(error => {
     console.log(error)
-    res.redirect('/skills')
+    res.redirect('/stormies')
     })
 }
 
@@ -57,5 +60,5 @@ export {
     newSkill as new,
     create,
     show,
-    deleteSkill as delete
+    deleteStormie as delete
 }
