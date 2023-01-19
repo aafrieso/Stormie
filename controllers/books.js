@@ -40,6 +40,25 @@ function show(req, res) {
   })
 }
 
+function bookLikes(req, res) {
+  Book.findById(req.params.id)
+  .then(book => {
+    book.bookLikes = !book.bookLikes
+    book.save()
+    .then(() => {
+      res.redirect(`/books/${book._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/books')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/books')
+  })
+}
+
 function edit(req, res) {
   Book.findById(req.params.id)
   .then(book => {
@@ -50,6 +69,26 @@ function edit(req, res) {
   })
   .catch(error => {
     console.log(error)
+    res.redirect('/books')
+  })
+}
+
+function addComment(req, res) {
+  Book.findById(req.params.id)
+  .then(book => {
+    req.body.commenter = req.user.profile._id
+    book.comments.push(req.body)
+    book.save()
+    .then(()=> {
+      res.redirect(`/books/${book._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/books')
+    })
+  })
+  .catch(err => {
+    console.log(err)
     res.redirect('/books')
   })
 }
@@ -94,7 +133,9 @@ export {
   index,
   create,
   show,
+  bookLikes,
   edit,
+  addComment,
   update,
   deleteBook as delete
 }

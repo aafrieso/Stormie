@@ -12,6 +12,10 @@ router.get('/:id/edit', isLoggedIn, booksCtrl.edit)
 
 router.post('/',isLoggedIn, booksCtrl.create)
 
+router.post('/:id/comments', isLoggedIn, booksCtrl.addComment)
+
+router.patch('/:id/bookLikes', isLoggedIn, booksCtrl.bookLikes)
+
 router.get('/:id',isLoggedIn, booksCtrl.update)
 
 router.delete('/:id',isLoggedIn, booksCtrl.delete)
