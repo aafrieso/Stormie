@@ -5,16 +5,21 @@
 
 <section>
   <h2><%= book.owner.name %>'s Book Comment Post</h2>
-  <% if (user) { %>
-    <h3>Add a comment</h3>
-    <form action="/books/<%= book._id %>/comments/<%= comments._id %>/edit" method="POST">
-      <textarea name="content"></textarea><br>
-      <button>Add Book Comment</button>
-    </form>
-  <% } %>
+  <% book.comments?.forEach(comment => { %>
+    <p>
+      <%= comment.content %> - <%= comment.commenter.name %>
+      <% if (comment.commenter._id.equals(user?.profile._id)) { %>
+        <form action="/books/<%= book._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+          <button>Delete</button>
+        </form>
+        <a href="/books/<%= book._id %>/comments/<%= comment._id %>/edit" class="btn">Update</a>
+      <% } %> 
+    </p> 
+  <% }) %>
+  <form action="/books/<%= book._id %>/comments" method="POST">
+    <textarea name="content"></textarea><br>
+    <button>Add Comment</button>
+  </form>
 
-<form action="/books/<%= book._id %>/comments/<%= comments._id %>?_method=DELETE" method="POST">
-  <button type="submit">Delete Book Comment</button>
-</form>
-
+</section>
 <%- include('../partials/footer') %>

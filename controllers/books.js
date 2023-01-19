@@ -28,12 +28,13 @@ function create(req, res) {
 function show(req, res) {
   Book.findById(req.params.id)
   .populate("owner")
+  .populate("comments.commenter")
   .then(book => {
     console.log(book);
     res.render('books/show', {
     title: "Show",
     book, 
-    comments,
+    // comments,
     })
   })
   .catch(error => {
@@ -112,29 +113,29 @@ function addComment(req, res) {
   })
 }
 
-// function deleteComment(req, res) {
-//   Book.findById(req.params.bookId)
-//   .then(book => {
-//     const commentDoc = book.comments.id(req.params.commentId)
-//     if (commentDoc.commenter.equals(req.user.profile._id)) {
-//       book.comments.remove(commentDoc)
-//       book.save()
-//       .then(() => {
-//         res.redirect(`/books/${book._id}`)
-//       })
-//       .catch(err => {
-//         console.log(err)
-//         res.redirect('/books')
-//       })
-//     } else {
-//       throw new Error(' Not authorized 🚫')
-//     }
-//   })
-//   .catch(err => {
-//     console.log(err)
-//     res.redirect('/books')
-//   })
-// }
+function deleteComment(req, res) {
+  Book.findById(req.params.bookId)
+  .then(book => {
+    // const commentDoc = book.comments.id(req.params.commentId)
+    if (book.owner.equals(req.user.profile._id)) {
+      book.comments.remove({_id: req.params.commentId})
+      book.save()
+      .then(() => {
+        res.redirect(`/books/${book._id}`)
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect('/books')
+      })
+    } else {
+      throw new Error(' Not authorized 🚫')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/books')
+  })
+}
 
 function editComment(req, res) {
   Book.findById(req.params.bookId)
@@ -184,7 +185,7 @@ export {
   update,
   deleteBook as delete,
   addComment,
-  // deleteComment as delete,
+  deleteComment,
   editComment,
   updateComment
 }
