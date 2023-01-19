@@ -1,0 +1,19 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <form action="/books/?_method=PUT" method="POST">
+    <label>
+      Edit Book Name 
+      <input type="number" name="bookcode">
+    </label>
+    <label>
+      Edit rating
+      <input type="number" name="rates" value="5" min="1" max="5" >
+    </label>
+    <button type="submit">Update Book</button>
+  </form>
+  
+</section>
+
+<%- include('../partials/footer') %>
