@@ -16,11 +16,11 @@ router.post('/:id/comments', isLoggedIn, booksCtrl.addComment)
 
 router.get('/:id/edit', isLoggedIn, booksCtrl.edit)
 
-router.get('/:id/comments/commentId/edit', isLoggedIn, booksCtrl.editComment)
+// router.get('/:id/comments/commentId/edit', isLoggedIn, booksCtrl.editComment)
 
 router.put('/:id', isLoggedIn, booksCtrl.update)
 
-router.put('/:id/comments/commentId',isLoggedIn, booksCtrl.updateComment)
+// router.put('/:id/comments/commentId',isLoggedIn, booksCtrl.updateComment)
 
 router.delete('/:id',isLoggedIn, booksCtrl.delete)
 

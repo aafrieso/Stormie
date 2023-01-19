@@ -63,7 +63,7 @@ function update(req, res) {
     if (book.owner.equals(req.user.profile._id)) {
       book.updateOne(req.body)
       .then(() => {
-        res.redirect(`/books/${book._id}`)
+        res.redirect("/books")
       })
     } else {
       throw new Error("not authorized")
@@ -137,45 +137,45 @@ function deleteComment(req, res) {
   })
 }
 
-function editComment(req, res) {
-  Book.findById(req.params.bookId)
-  .then(book => {
-    const commentDoc = book.comments.id(req.params.commentId)
-    if (commentDoc.commenter.equals(req.user.profile._id)) {
-      res.render('books/editComment', {
-        book, 
-        comment: commentDoc,
-        title: 'Update Comment'
-      })
-    } else {
-      throw new Error('🚫 Not authorized 🚫')
-    }
-  })
-}
+// function editComment(req, res) {
+//   Book.findById(req.params.bookId)
+//   .then(book => {
+//     const commentDoc = book.comments.id(req.params.commentId)
+//     if (commentDoc.commenter.equals(req.user.profile._id)) {
+//       res.render('books/editComment', {
+//         book, 
+//         comment: commentDoc,
+//         title: 'Update Comment'
+//       })
+//     } else {
+//       throw new Error('🚫 Not authorized 🚫')
+//     }
+//   })
+// }
 
-function updateComment(req, res) {
-  Book.findById(req.params.bookId)
-  .then(book => {
-    const commentDoc = book.comments.id(req.params.commentId)
-    if (commentDoc.commenter.equals(req.user.profile._id)) {
-      commentDoc.set(req.body)
-      book.save()
-      .then(() => {
-        res.redirect(`/books/${book._id}`)
-      })
-      .catch(err => {
-        console.log(err)
-        res.redirect('/books')
-      })
-    } else {
-      throw new Error('🚫 Not authorized 🚫')
-    }
-  })
-  .catch(err => {
-    console.log(err)
-    res.redirect('/books')
-  })
-}
+// function updateComment(req, res) {
+//   Book.findById(req.params.bookId)
+//   .then(book => {
+//     const commentDoc = book.comments.id(req.params.commentId)
+//     if (commentDoc.commenter.equals(req.user.profile._id)) {
+//       commentDoc.set(req.body)
+//       book.save()
+//       .then(() => {
+//         res.redirect(`/books/${book._id}`)
+//       })
+//       .catch(err => {
+//         console.log(err)
+//         res.redirect('/books')
+//       })
+//     } else {
+//       throw new Error('🚫 Not authorized 🚫')
+//     }
+//   })
+//   .catch(err => {
+//     console.log(err)
+//     res.redirect('/books')
+//   })
+// }
 
 export {
   index,
@@ -185,7 +185,7 @@ export {
   update,
   deleteBook as delete,
   addComment,
-  deleteComment,
-  editComment,
-  updateComment
+  deleteComment
+  // editComment,
+  // updateComment
 }
