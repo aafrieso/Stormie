@@ -7,7 +7,7 @@
   <h2><%= book.owner.name %>'s Book Comment Post</h2>
   <% if (user) { %>
     <h3>Add a comment</h3>
-    <form action="/books/<%= book._id %>/comments" method="POST">
+    <form action="/books/edit<%= book._id %>/comments" method="POST">
       <textarea name="content"></textarea><br>
       <button>Add Book Comment</button>
     </form>
