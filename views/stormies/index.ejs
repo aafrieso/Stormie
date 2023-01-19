@@ -21,6 +21,9 @@
     <a href="/stormies/<%= stormie._id %>/edit">
       <button>Edit ZIP</button>
     </a>
+    <form action="/stormies/<%= stormie._id %>?_method=DELETE" method="POST">
+      <button type="submit">Delete ZIP</button>
+    </form>
   <% }) %> 
 </ul>
 </section>
