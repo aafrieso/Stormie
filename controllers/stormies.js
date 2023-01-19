@@ -14,14 +14,14 @@ function index(req, res) {
   res.redirect('/')})
 }
 
-function newStormie(req, res) {
-res.render('stormies/new')
-}
+// function newStormie(req, res) {
+// res.render('stormies/new')
+// }
 
 function create(req, res) {
-  req.body.learned = false
+  // req.body.owner = req.user.profile._id
   Stormie.create(req.body)
-  .then(stormie => {
+  .then(zipCode => {
   res.redirect('/stormies')
 })
 .catch(error => {
@@ -32,10 +32,12 @@ function create(req, res) {
 
 function show(req, res) {
   Stormie.findById(req.params.id)
+  .populate("owner")
   .then(stormie => {
     res.render('stormies/show', {
     title: "Stormie Weather",
-    stormie
+    stormie, 
+    // zipCode: stormie.zipCode
     })
   })
   .catch(error => {
@@ -57,7 +59,7 @@ function deleteStormie(req, res) {
 
 export {
     index,
-    newStormie as new,
+    // newStormie as new,
     create,
     show,
     deleteStormie as delete

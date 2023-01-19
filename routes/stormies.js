@@ -5,7 +5,7 @@ const router = Router()
 
 router.get('/', stormiesCtrl.index)
 
-router.get('/new', stormiesCtrl.new)
+// router.get('/new', stormiesCtrl.new)
 
 router.get('/:id', stormiesCtrl.show)
 
