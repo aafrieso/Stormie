@@ -16,12 +16,12 @@
 <ul>
   <% stormies.forEach(zipCode => { %> 
     <li>
-      <%= zipCode.zipCode %> 
+      <%= zipCode._id %> 
     </li>
-    <a href="/stormies/<%= stormie._id %>/edit">
+    <a href="/stormies/<%= zipCode._id %>/edit">
       <button>Edit ZIP</button>
     </a>
-    <form action="/stormies/<%= stormie._id %>?_method=DELETE" method="POST">
+    <form action="/stormies/<%= zipCode._id %>?_method=DELETE" method="POST">
       <button type="submit">Delete ZIP</button>
     </form>
   <% }) %> 
