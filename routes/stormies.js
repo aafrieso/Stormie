@@ -9,7 +9,11 @@ router.get('/', stormiesCtrl.index)
 
 router.get('/:id', stormiesCtrl.show)
 
+router.get('/:id/edit', stormiesCtrl.edit)
+
 router.post('/', stormiesCtrl.create)
+
+router.get('/:id', stormiesCtrl.update)
 
 router.delete('/:id', stormiesCtrl.delete)
 

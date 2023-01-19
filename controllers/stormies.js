@@ -46,6 +46,32 @@ function show(req, res) {
   })
 }
 
+function edit(req, res) {
+  Stormie.findById(req.params.id)
+  .then(stormie => {
+    res.render('stormies/edit', {
+      title: "Edit ZIP",
+      stormie
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/stormies')
+  })
+}
+
+function update(req, res) {
+  Stormie.findById(req.params.id)
+  .then(stormie => {
+    if (stormie.owner.equals(req.user.profile._id)) {
+      stormie.updateOne(req.body)
+      .then(() => {
+        res.redirect(/stormies)
+      })
+    }
+  })
+}
+
 function deleteStormie(req, res) {
   Stormie.findByIdAndDelete(req.params.id)
   .then(stormie => {
