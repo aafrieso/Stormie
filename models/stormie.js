@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const stormieSchema = new Schema({
-    stormie: String,
+    stormie: { type: String, required: true},
     // learned: Boolean
     zipCode: Number,
     owner: { type: Schema.Types.ObjectId, ref: "Profile" }

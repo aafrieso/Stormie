@@ -11,7 +11,7 @@ function index(req, res) {
 })
 .catch(error => {
   console.log(error)
-  res.redirect('/songs')
+  res.redirect('/profiles')
 })
 }
 
@@ -29,7 +29,6 @@ function show(req, res) {
     res.redirect('/')
   })
 }
-
 
 function edit(req, res) {
   Profile.findById(req.params.id)

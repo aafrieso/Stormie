@@ -1,7 +1,7 @@
 import { Stormie } from '../models/stormie.js'
 
 function index(req, res) {
-  Stormie.find({})
+  Stormie.find(req.params.id)
   .then(stormies => {
     res.render('stormies/index', {
     title: "Stormie Location",
