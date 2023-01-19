@@ -2,7 +2,7 @@ import { Stormie } from '../models/stormie.js'
 import { Profile } from '../models/profile.js'
 
 function index(req, res) {
-    Skill.find({})
+    Stormie.find({})
     .then(stormies => {
     res.render('stormies/index', {
     stormies: stormies,
@@ -31,10 +31,10 @@ Stormie.create(req.body)
 }
 
 function show(req, res) {
-Skill.findById(req.params.id)
-.then(skill => {
+Stormie.findById(req.params.id)
+.then(stormie => {
     res.render('stormies/show', {
-        stormie: stormie
+        stormie
     })
 })
 .catch(error => {
@@ -44,7 +44,7 @@ Skill.findById(req.params.id)
 }
 
 function deleteStormie(req, res) {
-    Skill.findByIdAndDelete(req.params.id)
+    Stormie.findByIdAndDelete(req.params.id)
     .then(stormie => {
     res.redirect('/stormies')
 })

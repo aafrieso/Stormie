@@ -1,13 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
-<body>
-  <h1><%= title %></h1>
-  <a href="/stormies">Add Weather</a>
-</body>
-</html>
+<%- include('./partials/html-head') %>
+<%- include('./partials/nav') %>
+
+<main>
+  <h1>Hello, <%= user ? user.profile.name : "friend" %></h1>
+  <% if (user?.profile.avatar) { %>
+    <div>
+      <img
+        src="<%= user.profile.avatar %>"
+        alt="<%= user.profile.name %> avatar"
+      />
+    </div>
+  <% } %>
+</main>
+
+<%- include('./partials/footer') %>
+
