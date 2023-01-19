@@ -8,23 +8,27 @@ Stormie is an app about books.
 # Technologies used 
 
 * CSS
+* EJS
 * JavaScript
+* MongoDb
+* Express
+* Node.js
+* Mongoose
 * HTML
 * Git
-* GitHub
 * Visual Studio Code  
 
 # Credits 
 
-* French flag favicon drawn using faviconer.com
+* Book favicon drawn using faviconer.com
 * Font is apple-system by Apple inc.
 
-# Ice Box
+# Ice Box 🧊
 
-* Dark mode
+* 
 
-* token sound effect
+* 
 
 * Accessibility features
 
-* winning celebration effect
+* Dark mode
