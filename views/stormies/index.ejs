@@ -7,7 +7,7 @@
 <form action="/stormies" method="POST">
   <label>
     Enter Your ZIP Here
-    <input type="text"  name="zipcode">
+    <input type="number" name="zipcode">
   </label>
   <button type="submit">Save Location</button>
 </form>
@@ -16,8 +16,11 @@
 <ul>
   <% stormies.forEach(zipCode => { %> 
     <li>
-      <%= stormies.stormie %> 
+      <%= zipCode.zipCode %> 
     </li>
+    <a href="/stormies/<%= stormie._id %>/edit">
+      <button>Edit ZIP</button>
+    </a>
   <% }) %> 
 </ul>
 </section>

@@ -1,7 +1,7 @@
 import { Stormie } from '../models/stormie.js'
 
 function index(req, res) {
-  Stormie.find(req.params.id)
+  Stormie.find({})
   .then(stormies => {
     res.render('stormies/index', {
     title: "Stormie Location",
@@ -35,7 +35,7 @@ function show(req, res) {
   .populate("owner")
   .then(stormie => {
     res.render('stormies/show', {
-    title: "Stormie Weather",
+    title: "Stcder",
     stormie, 
     // zipCode: stormie.zipCode
     })
