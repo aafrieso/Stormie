@@ -2,14 +2,14 @@
 <%- include('../partials/nav') %>
 
 <section>
-  <form action="/books/?_method=PUT" method="POST">
+  <form action="/books/<%= book._id %>?_method=PUT" method="POST">
     <label>
       Edit Book Name 
-      <input type="text" name="bookname">
+      <input type="text" name="name">
     </label>
     <label>
       Edit rating
-      <input type="number" name="rates" value="5" min="1" max="5" >
+      <input type="number" name="rating" value="5" min="1" max="5" >
     </label>
     <button type="submit">Update Book</button>
   </form>

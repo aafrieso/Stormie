@@ -33,6 +33,7 @@ function show(req, res) {
     res.render('books/show', {
     title: "Show",
     book, 
+    comments,
     })
   })
   .catch(error => {
