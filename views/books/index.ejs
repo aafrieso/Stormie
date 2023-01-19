@@ -7,11 +7,11 @@
 <form action="/books" method="POST">
   <label>
     Enter Book 
-    <input type="text" name="books">
+    <input type="text" name="name">
   </label>
   <label>
     Rate Book
-    <input type="number" name="rates" value="5" min="1" max="5" >
+    <input type="number" name="rating" value="5" min="1" max="5" >
   </label>
   <button type="submit">Save Book</button>
 </form>
@@ -28,9 +28,6 @@
     <a href="/books/<%= book._id %>/edit">
       <button>Edit Book Rating</button>
     </a>
-    <form action="/books/<%= book._id %>?_method=DELETE" method="POST">
-      <button type="submit">Delete Book</button>
-    </form>
   <% }) %> 
 </ul>
 </section>

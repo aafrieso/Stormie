@@ -1,6 +1,10 @@
-<h1>Your Weather Page!</h1>
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
 
-<form action="/stormies/<%= stormies._id %>" method="POST">
-  <input type="text" name="zipcode" placeholder="Pleaser Enter Your Zip Code">
-  <button type="Submit">Look Up</button>
+<h1>Your Book Comments!</h1>
+
+<form action="/books/<%= book._id %>?_method=DELETE" method="POST">
+  <button type="submit">Delete Book</button>
 </form>
+
+<%- include('../partials/footer') %>

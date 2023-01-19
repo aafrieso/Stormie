@@ -7,7 +7,7 @@ const commentSchema = new Schema({
   commenter: { type: Schema.Types.ObjectId, ref: "Profile"},
 })
 
-const booksSchema = new Schema({
+const bookSchema = new Schema({
   name: String,
   author: String,
   rating: Number,
@@ -17,7 +17,7 @@ const booksSchema = new Schema({
   timestamps: true 
 })
 
-const Book = mongoose.model('Book', booksSchema)
+const Book = mongoose.model('Book', bookSchema)
 
 export {
     Book
