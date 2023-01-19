@@ -66,9 +66,15 @@ function update(req, res) {
     if (stormie.owner.equals(req.user.profile._id)) {
       stormie.updateOne(req.body)
       .then(() => {
-        res.redirect(/stormies)
+        res.redirect("/stormies")
       })
+    } else {
+      throw new Error("not authorized")
     }
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/stormies')
   })
 }
 
@@ -84,9 +90,11 @@ function deleteStormie(req, res) {
 }
 
 export {
-    index,
-    // newStormie as new,
-    create,
-    show,
-    deleteStormie as delete
+  index,
+  // newStormie as new,
+  create,
+  show,
+  edit,
+  update,
+  deleteStormie as delete
 }
