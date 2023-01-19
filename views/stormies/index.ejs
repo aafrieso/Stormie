@@ -1,10 +1,25 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<h1>Your Weather Home Page</h1>
+<section>
+<h1>Get Your Local Weather Here!</h1>
 
-<form action="">
+<form action="/stormies" method="POST">
   <input type="text" name="zipcode" placeholder="Enter ZIP">
+  <button>Save Location</button>
 </form>
 
+<h2>Your Favorite Locations</h2>
+<ul>
+  <% stormies.forEach(stormie => { %> 
+    <li>
+      <a href="/stormies/<%= stormie._id %>"></a>
+    </li>
+  <% }) %> 
+</ul>
+</section>
+
 <%- include('../partials/footer') %>
+
+
+

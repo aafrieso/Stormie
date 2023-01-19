@@ -1,11 +1,6 @@
-<%- include('../partials/html-head') %>
-<%- include('../partials/nav') %>
-
 <h1>Your Weather Page!</h1>
 
 <form action="/stormies/<%= stormies._id %>" method="POST">
   <input type="text" name="zipcode" placeholder="Pleaser Enter Your Zip Code">
   <button type="Submit">Look Up</button>
 </form>
-
-<%- include('../partials/footer') %>
