@@ -1,5 +1,5 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="..public/stylesheets/style.css"></link>
+<link rel="stylesheet" href="../stylesheets/style.css"></link>
 <%- include('../partials/nav') %>
 
 <h1>Your Book Comments!</h1>
@@ -7,11 +7,11 @@
 <section>
   <h2><%= book.owner.name %>'s Book Comment Post</h2>
   <% book.comments?.forEach(comment => { %>
-    <p>
+    <p id="book-comment">
       <%= comment.content %> - <%= comment.commenter.name %>
       <% if (comment.commenter._id.equals(user?.profile._id)) { %>
         <form action="/books/<%= book._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
-          <button>Delete</button>
+          <button class="comment-btn">Delete</button>
         </form>
         <!-- <button class="btn">Update</button></a> -->
       <% } %> 

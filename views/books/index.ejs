@@ -1,5 +1,5 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="..public/stylesheets/style.css"></link>
+<link rel="stylesheet" href="../stylesheets/style.css"></link>
 <%- include('../partials/nav') %>
 
 <section>
@@ -7,17 +7,17 @@
 
 <form action="/books" method="POST" class="book-enter">
   <label class="submit-book">
-    Enter Book: 
+    Enter Book Name: 
     <input type="text" name="name">
   </label>
-  <label>
+  <label class="rate-book-num">
     Rate Book:
     <input type="number" name="rating" value="5" min="1" max="5" class="submit-rating" >
   </label>
   <button class="rating-button" type="submit">Submit Book Rating</button>
 </form>
 <h2>All Rated Books</h2>
-<ul>
+<ul class="books-buttons">
   <% books.forEach(book => { %> 
     <li id="book-list">
       <a href="/books/<%= book._id %>">
@@ -26,11 +26,11 @@
       <%= book.rating %> 
     </li>
     <a href="/books/<%= book._id %>/edit">
-      <button class="edit-button">Edit Book Rating</button>
+      <button class="edit-btn">Edit Book Rating</button>
     </a>
     <% if (book.owner.equals(user?.profile._id)) { %> 
     <form action="/books/<%= book._id %>?_method=DELETE" method="POST">
-      <button type="submit">Delete Book</button>
+      <button class="delete-btn" type="submit">Delete Entry</button>
     </form>
     <% } %> 
   <% }) %> 

@@ -3,7 +3,7 @@
 
 Stormie is an app about books.
 
-## [Play the game here](https://austinfriesorger-connect4.netlify.app/)
+## [Check out the app Stomie here](https://austinfriesorger-connect4.netlify.app/)
 
 ## [Check out the planning materials here](https://trello.com/invite/b/9McwHkCr/ATTI506d2406959bc3f3d4fc2025a31d00a4236DBA7F/simple-project-board)
 

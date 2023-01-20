@@ -55,6 +55,10 @@ h2 {
   margin-top: 60px;
 }
 
+.rate-book-num {
+  margin-left: 12px;
+}
+
 .submit-rating {
   margin-right: 26px;
   margin-left: 6px;
@@ -65,9 +69,42 @@ h2 {
   color: white;
 }
 
-#book-list {
+.books-buttons {
   list-style: none;
-  margin-bottom: 10px;
+  justify-content: center;
+  align-content: center;
+  display: grid;
+}
+
+.edit-btn {
+  margin-bottom: 6px;
+  background-color: darkgreen;
+  color: white;
+  justify-content: center;
+  align-content: center;
+}
+
+.delete-btn {
+  margin-bottom: 15px;
+  background-color: darkgreen;
+  color: white;
+  justify-content: center;
+  align-content: center;
+}
+
+.comment-btn {
+  background-color: darkgreen;
+  color: white;
+  justify-content: center;
+  align-content: center;
+}
+
+#book-list {
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 11px;
+  justify-content: center;
+  align-content: center;
 }
 
 #logout {
