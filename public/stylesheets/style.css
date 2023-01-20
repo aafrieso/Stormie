@@ -55,16 +55,19 @@ h2 {
   margin-top: 60px;
 }
 
-.submit-book {
-  margin-right: 25px;
-}
-
 .submit-rating {
   margin-right: 26px;
+  margin-left: 6px;
 }
 
 .rating-button {
-  
+  background-color: darkgreen;
+  color: white;
+}
+
+#book-list {
+  list-style: none;
+  margin-bottom: 10px;
 }
 
 #logout {

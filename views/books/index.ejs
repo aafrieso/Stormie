@@ -19,14 +19,14 @@
 <h2>All Rated Books</h2>
 <ul>
   <% books.forEach(book => { %> 
-    <li>
+    <li id="book-list">
       <a href="/books/<%= book._id %>">
         <%= book.name %> 
       </a>
       <%= book.rating %> 
     </li>
     <a href="/books/<%= book._id %>/edit">
-      <button>Edit Book Rating</button>
+      <button class="edit-button">Edit Book Rating</button>
     </a>
     <% if (book.owner.equals(user?.profile._id)) { %> 
     <form action="/books/<%= book._id %>?_method=DELETE" method="POST">
