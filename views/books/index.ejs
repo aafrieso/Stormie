@@ -6,13 +6,13 @@
 <h1>Rate A Book Here!</h1>
 
 <form action="/books" method="POST" class="book-enter">
-  <label>
-    Enter Book 
+  <label class="submit-book">
+    Enter Book: 
     <input type="text" name="name">
   </label>
   <label>
-    Rate Book
-    <input type="number" name="rating" value="5" min="1" max="5" >
+    Rate Book:
+    <input type="number" name="rating" value="5" min="1" max="5" class="submit-rating" >
   </label>
   <button type="submit">Save Book</button>
 </form>
