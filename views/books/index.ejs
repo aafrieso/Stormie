@@ -15,7 +15,6 @@
   </label>
   <button type="submit">Save Book</button>
 </form>
-
 <h2>All Rated Books</h2>
 <ul>
   <% books.forEach(book => { %> 
@@ -28,6 +27,11 @@
     <a href="/books/<%= book._id %>/edit">
       <button>Edit Book Rating</button>
     </a>
+    <% if (book.owner.equals(user?.profile._id)) { %> 
+    <form action="/books/<%= book._id %>?_method=DELETE" method="POST">
+      <button type="submit">Delete Book</button>
+    </form>
+    <% } %> 
   <% }) %> 
 </ul>
 </section>
