@@ -3,17 +3,17 @@
 <%- include('../partials/nav') %>
 
 
-<section>
+<section class="edit-pge">
   <form action="/books/<%= book._id %>?_method=PUT" method="POST">
-    <label>
-      Edit Book Name 
+    <label class="edit-page">
+      Edit Book Name: 
       <input type="text" name="name">
     </label>
-    <label>
-      Edit rating
+    <label class="edit-rating-num-name">
+      Edit rating:
       <input type="number" name="rating" value="5" min="1" max="5" >
     </label>
-    <button type="submit">Update Book</button>
+    <button id="updte-book-btn" type="submit">Update Book</button>
   </form>
   
 </section>

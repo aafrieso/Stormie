@@ -11,15 +11,14 @@
       <%= comment.content %> - <%= comment.commenter.name %>
       <% if (comment.commenter._id.equals(user?.profile._id)) { %>
         <form action="/books/<%= book._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
-          <button class="comment-btn">Delete</button>
+          <button class="comment-delete-btn">Delete Your Comment</button>
         </form>
-        <!-- <button class="btn">Update</button></a> -->
       <% } %> 
     </p> 
   <% }) %>
-  <form action="/books/<%= book._id %>/comments" method="POST">
+  <form id="txt-comment" action="/books/<%= book._id %>/comments" method="POST">
     <textarea name="content"></textarea><br>
-    <button>Add Comment</button>
+    <button class="add-cmmt-btn">Add Comment</button>
   </form>
 
 </section>

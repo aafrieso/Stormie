@@ -96,7 +96,47 @@ h2 {
   background-color: darkgreen;
   color: white;
   justify-content: center;
-  align-content: center;
+  align-items: center;
+}
+
+.edit-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.edit-rating-num-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.edit-pge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-cmmt-btn {
+  margin-left: 10px;
+  background-color: darkgreen;
+  color: white;
+}
+
+.comment-delete-btn {
+  margin-left: 515px;
+  margin-top: 30px;
+  background-color: darkgreen;
+  color: yellow;
+}
+
+#updte-book-btn {
+  margin-top: 20px;
+  margin-left: 85px;
+  background-color: darkgreen;
+  color: white;
 }
 
 #book-list {
@@ -120,3 +160,28 @@ h2 {
   font-size: 33px;
 }
 
+#book-comment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1px;
+  justify-content: center;
+}
+
+#txt-comment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+#profile-idx {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  margin left: 25px;
+}
