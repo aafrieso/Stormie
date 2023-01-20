@@ -1,9 +1,9 @@
 # Stormie 
-![Screenshot 2022-12-22 at 9 54 58 AM](https://user-images.githubusercontent.com/119258338/209186972-a8126457-ad1c-4ed1-afd8-86f475f8e17a.png)
+![stormie screenshot](https://user-images.githubusercontent.com/119258338/213743618-d476fbcf-39f7-4d5d-a4f2-934f5db9f3ba.png)
 
-Stormie is an app about books.
+Stormie is an app about books. Users have the ability to rate books that they have previously read, or just read. Users also have the ability to comment on the book they have rated. 
 
-## [Check out the app Stomie here](https://austinfriesorger-connect4.netlify.app/)
+## [Check out the app Stomie here](https://stormie.fly.dev/)
 
 ## [Check out the planning materials here](https://trello.com/invite/b/9McwHkCr/ATTI506d2406959bc3f3d4fc2025a31d00a4236DBA7F/simple-project-board)
 
