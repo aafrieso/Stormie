@@ -24,13 +24,10 @@ Stormie is an app about books.
 
 * Book favicon drawn using faviconer.com
 * Font is apple-system by Apple inc.
+* OAuth by Google Cloud
 
 # Ice Box 🧊
 
-* 
-
-* 
-
-* Accessibility features
-
-* Dark mode
+* Add the ability to like comments
+* Add a weather API
+* Ability to add top 3 favorite books to profile
