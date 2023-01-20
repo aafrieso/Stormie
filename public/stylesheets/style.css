@@ -132,6 +132,14 @@ h2 {
   color: yellow;
 }
 
+.card-container {
+  flex-wrap: wrap;
+  margin-top: 15px;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
 #updte-book-btn {
   margin-top: 20px;
   margin-left: 85px;
@@ -173,15 +181,4 @@ h2 {
   justify-content: center;
   align-items: center;
   justify-content: center;
-}
-
-#profile-idx {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  justify-content: center;
-}
-
-img {
-  margin left: 25px;
 }
