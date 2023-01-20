@@ -51,9 +51,20 @@ h2 {
 .book-enter {
   display: flex;
   justify-content: center;
-  justify-content: center;
   align-items: center;
   margin-top: 60px;
+}
+
+.submit-book {
+  margin-right: 25px;
+}
+
+.submit-rating {
+  margin-right: 26px;
+}
+
+.rating-button {
+  
 }
 
 #logout {
